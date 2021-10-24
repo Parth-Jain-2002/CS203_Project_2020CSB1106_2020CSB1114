@@ -1,0 +1,42 @@
+CS203
+Project Proposal
+
+Idea 1:
+1. Title: Smart Home Automation
+2. Objective: The objective of this project is to develop a smart home that encapsulates security and comfort features for the owner of the home. 
+3. Implemented as RTL
+4. Functionality: 
+   1. Temperature Control
+   2. Fire Alarm
+   3. Burglar Alarm
+   4. Visitor Counter
+   5. Luminosity Control
+   6. Will receive input from magnetic sensor (for doors), smoke detector (for fire), optical sensitive devices (for luminosity) and a thermostat (for temperature)
+
+
+Idea 2:
+1. Title: Random Number Generation
+2. Objective: Use Verilog to implement LFSR and other random number generating techniques.
+3. Implemented as RTL
+4. Functionality:
+   1. Gives the output as a random number for a given seed value.
+   2. Minimising the probability of repetitions
+
+
+Idea 3: 
+1. Title: Image Processing Algorithms
+2. Objective: To implement an application to process images using common image processing algorithms in Verilog HDL.
+3. Implemented as RTL
+4. Functionality:
+   1. Applying filter such as inversion, grayscale
+   2. Edge detection
+   3. Adjusting brightness, contrast and other attributes
+
+
+Idea 4:
+1. Title: Teaching Aid 
+2. Overall objective: To implement an application to target one or multiple topics of digital design. Use Javascript to make it more interactive. To develop an application that gamifies the topic of digital design so that it becomes easy and fun to learn.
+3. Implemented as software application
+4. Functionality:
+    i)    Making a website to target certain topics of digital design
+   ii)    Gamify the concept so it becomes easy and fun to learn
