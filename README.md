@@ -22,25 +22,25 @@ Secondary modules.
 
 **Secondary Modules:**
 1. Independent controller for room lights and other appliances: 
-* INPUTS:
+   * INPUTS:
       * Motion Sensor and IR Sensor (1 bit).
       * Manual Override (1 bit)
     * OUTPUTS:
       * lights (on/off)
-2. Burr Alarm:
+2. Burglar Alarm:
     * INPUTS:
       * Magnetic Sensor Door open/close
-      * Locked
+      * Locked (if door is locked or not)
     * OUTPUTS:
       * Burglar Alarm
-3. Win security: (Output goes to Primary Module)
+3. Window security: (Output goes to Primary Module)
     * INPUTS:
       * Shattering (1 bit)
       * Luminosity
     * OUTPUTS:
       * Burglar Alarm
-      * Window blinds luminosity sensor (8 bits)
-4. Visr Counter:
+      * Window blinds
+4. Visitor Counter:
     * INPUTS:
       * 2 IR_sensor (1 bit)
     * OUTPUTS:
@@ -51,23 +51,19 @@ Secondary modules.
     * OUTPUTS:
       * heating on/off
       * cooling on/off
-6. Raiensor:
+6. Rain Sensor:
     * INPUTS:
       * Rain Sensor
     * OUTPUTS
       * Rain Alarm
-7. WatSensor( Water in the Tank):
+7. Water Sensor( Water in the Tank):
     * INPUTS:
       * W_sensor(2 bits) detects water level in the tank
     * OUTPUTS:
       * Valve open/close
-8. Soiensor: 
+8. Soil Sensor: 
     * INPUTS:
       * Moisture level
       * Water level
     * OUTPUTS:
       * Water on/off
-
-
-Primary module sends inputs to various Secondary modules and acts on the output from 
-Secondary modules.
