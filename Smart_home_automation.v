@@ -16,7 +16,22 @@ rain_sensor, water_sensor,lum_sen,moisture_sensor,temp, r_motion_sen, r_ir_sen, 
     light_state=4'b0000;
 
     always @(posedge Clk) begin
-        
+        burglar_alarm b(magnetic_sensor,d_alarm,locked);
+        fire f(f_sensor,f_alarm);
+        visitor_counter v(door_ir_sensor1,door_ir_sensor2,pre_count,curr_count);
+        lum_out l(lum_sen,light_out);
+        soil s(moisture_sensor,soil_sprinkler);
+        rain r(rain_sensor,rain_alarm);
+        water w(water_sensor,water_out);
+        temp_control t(temp, heat, cool);
+        light_control l1(l_out[0], lum_sen, r_motion_sen[0], r_ir_sen[0], manual[0],light_state[0]);
+        light_control l2(l_out[1], lum_sen, r_motion_sen[1], r_ir_sen[1], manual[1],light_state[1]);
+        light_control l3(l_out[2], lum_sen, r_motion_sen[2], r_ir_sen[2], manual[3],light_state[2]);
+        light_control l4(l_out[3], lum_sen, r_motion_sen[3], r_ir_sen[3], manual[4],light_state[3]);
+        window w1(w_alarm[0], blinds[1:0], shatter[0], lum_sen);
+        window w2(w_alarm[1], blinds[3:2], shatter[1], lum_sen);
+        window w3(w_alarm[2], blinds[5:4], shatter[2], lum_sen);
+        window w4(w_alarm[3], blinds[7:6], shatter[3], lum_sen);
     end
 endmodule
 
