@@ -25,7 +25,7 @@ module master ( alarms, lights_on, heat_on, cool_on, sprink_on, pump_on, mod_res
             alarms = {fire, door|windows, rain};
             lights_on = lights;
             heat_on = heat;
-            cool_on = heat;
+            cool_on = cool;
             occupants_in = occupants;
             pump_on = water_pump;
             sprink_on = water_sprink;
