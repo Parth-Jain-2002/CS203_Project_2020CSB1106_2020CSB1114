@@ -72,7 +72,18 @@ module window (clk, alarm, shatter);
     end
 endmodule
 
+module alarms(state, clk, fire, burglar, rain);
+    input [2:0] state;
+    input clk;
 
+    output reg fire, burglar, rain;
+
+    always @(posedge clk) begin
+        if (state[2] ==1'b1) fire = 1'b1;
+        if (state[1] ==1'b1) burglar = 1'b1;
+        if (state[0] ==1'b1) rain = 1'b1;
+    end
+endmodule
  
 /**************************/
 
