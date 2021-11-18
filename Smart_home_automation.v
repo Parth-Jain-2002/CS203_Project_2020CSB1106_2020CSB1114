@@ -67,21 +67,28 @@ endmodule
 module window (clk, alarm, shatter);
     input clk, shatter;
     output reg alarm;
-    always @(posedge clk)begin
+    always @(posedge clk) begin
         alarm = shatter;
     end
 endmodule
 
-module alarms(state, clk, fire, burglar, rain);
+module alarms(state, clk, reset, fire, burglar, rain);
     input [2:0] state;
-    input clk;
+    input clk, reset;
 
     output reg fire, burglar, rain;
 
-    always @(posedge clk) begin
-        if (state[2] ==1'b1) fire = 1'b1;
-        if (state[1] ==1'b1) burglar = 1'b1;
-        if (state[0] ==1'b1) rain = 1'b1;
+    always @(posedge clk or posedge reset) begin
+        if (reset == 1) begin
+            fire = 1'b0;
+            burglar = 1'b0;
+            rain = 1'b0;
+        end
+        else begin
+            if (state[2] ==1'b1) fire = 1'b1;
+            if (state[1] ==1'b1) burglar = 1'b1;
+            if (state[0] ==1'b1) rain = 1'b1;
+        end
     end
 endmodule
  
@@ -102,18 +109,18 @@ module visitor_counter(clk, reset, ir_sensor1, ir_sensor2,curr_visitor);
         else begin
             if (state == 2'b11)
                 if (ir_sensor1 == 1'b0 && ir_sensor2 == 1'b0) state = 2'b00;
-            else if (state == 2'b00)begin
+            if (state == 2'b00)begin
                 if (ir_sensor1 == 1'b1 && ir_sensor2 == 1'b0) state = 2'b10;
                 if (ir_sensor1 == 1'b0 && ir_sensor2 == 1'b1) state = 2'b01;
             end
-            else if (state == 2'b10)begin
+            if (state == 2'b10)begin
                 if (ir_sensor1 == 1'b0 && ir_sensor2 == 1'b1) begin
                     state = 2'b11; 
                     curr_visitor = curr_visitor+1;
                 end
                 else state = state;
             end
-            else if (state == 2'b01)begin
+            if (state == 2'b01)begin
                 if (ir_sensor1 == 1'b1 && ir_sensor2 == 1'b0) begin
                     state = 2'b11; 
                     curr_visitor = curr_visitor - 1;
@@ -192,7 +199,6 @@ module temp_control (heat, cool, clk, temp, reset);
         end
     end
 endmodule
-/***********************/
 
 module water(moisture_sensor, water_sensor, clk ,pump, sprinkler, reset);
     input [7:0] moisture_sensor;
