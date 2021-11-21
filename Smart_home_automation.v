@@ -85,9 +85,9 @@ module alarms(state, clk, reset, fire, burglar, rain);
             rain = 1'b0;
         end
         else begin
-            if (state[2] ==1'b1) fire = 1'b1;
-            if (state[1] ==1'b1) burglar = 1'b1;
-            if (state[0] ==1'b1) rain = 1'b1;
+            fire = state[2];
+            burglar = state[1];
+            rain = state[0];
         end
     end
 endmodule
