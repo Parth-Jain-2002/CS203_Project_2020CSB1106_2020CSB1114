@@ -19,7 +19,7 @@ module rain_tb;
     begin
 
     #5 
-    $display("To show the functionality of fire module");
+    $display("To show the functionality of rain module");
     #10
     rsen=1'b0;
     #10

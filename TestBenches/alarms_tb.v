@@ -5,7 +5,7 @@ module alarms_tb;
     reg [2:0]state;
     wire fire, rain, burglar;
 
-    alarms A (state, clk, reset, fire, burglar, rain);
+    alarms A (.state(state), .clk(clk), .reset(reset), .fire(fire), .burglar(burglar), rain);
 
     initial
     begin
@@ -23,27 +23,27 @@ module alarms_tb;
     #10
     state=3'b000;
     #10
-    $display("time=%4d: Alram-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
+    $display("time=%4d: Alarm-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
     #5 reset=1'b1;
     #5 reset=1'b0;
     state=3'b001;
     #10
-    $display("time=%4d: Alram-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
+    $display("time=%4d: Alarm-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
     #5 reset=1'b1;
     #5 reset=1'b0;
     state=3'b010;
     #10
-    $display("time=%4d: Alram-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
+    $display("time=%4d: Alarm-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
     #5 reset=1'b1;
     #5 reset=1'b0;
     state=3'b100;
     #10
-    $display("time=%4d: Alram-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
+    $display("time=%4d: Alarm-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
     #5 reset=1'b1;
     #5 reset=1'b0;
     state=3'b110;
     #10
-    $display("time=%4d: Alram-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
+    $display("time=%4d: Alarm-states: %3b , Fire-Alarm: %b , Burglar-Alarm: %b , Rain-Alarm: %b",$time,state,fire,burglar,rain);
     
     end
     

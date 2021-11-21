@@ -12,7 +12,7 @@ module WATER_TB ();
         Reset = 1'b 0; 
         #4
         // resetting module
-        
+        $display("To show the functionality of temperature module");
         Reset = 1'b 1; 
         #4
         Reset = 1'b 0;
