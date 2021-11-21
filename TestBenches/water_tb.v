@@ -1,6 +1,6 @@
 `include "../Smart_home_automation.v"
 
-module WATER_TB ();
+module water_tb;
     reg [7:0] Moisture_sensor;
     reg [1:0] Water_sensor;
     wire Pump, Sprinkler;
@@ -13,7 +13,7 @@ module WATER_TB ();
         Reset = 1'b 0; 
         #4
         // resetting module
-        
+        $display("To show the functionality of water module");
         Reset = 1'b 1; 
         #4
         Reset = 1'b 0;

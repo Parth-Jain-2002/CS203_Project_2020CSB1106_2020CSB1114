@@ -1,4 +1,5 @@
 `include "../Smart_home_automation.v"
+
 module visitor_counter_tb;
     reg clk;
     reg reset,ir1,ir2;
@@ -18,7 +19,7 @@ module visitor_counter_tb;
     begin
 
     #5 reset=1'b1;
-    $display("To show the functionality of visitor module");
+    $display("To show the functionality of visitor counter module");
     #10 reset=1'b0;
     ir1=1'b0; ir2=1'b0;
     #10
