@@ -1,6 +1,6 @@
 `include "../Smart_home_automation.v"
 
-module reg_tb;
+module light_control_tb;
     reg clk,reset,ms,ir,man;
     reg [7:0] lum;
     wire il;

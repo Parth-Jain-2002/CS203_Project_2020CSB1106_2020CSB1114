@@ -1,6 +1,6 @@
 `include "../Smart_home_automation.v"
 
-module WATER_TB ();
+module water_tb;
     reg [7:0] Moisture_sensor;
     reg [1:0] Water_sensor;
     wire Pump, Sprinkler;

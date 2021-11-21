@@ -1,6 +1,6 @@
 `include "../Smart_home_automation.v"
 
-module WATER_TB ();
+module ext_light_tb;
     reg [7:0] Lum_sen;
     wire Ext_light;
     reg Reset, CLK;

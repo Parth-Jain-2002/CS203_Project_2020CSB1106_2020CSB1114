@@ -5,7 +5,7 @@ module alarms_tb;
     reg [2:0]state;
     wire fire, rain, burglar;
 
-    alarms A (.state(state), .clk(clk), .reset(reset), .fire(fire), .burglar(burglar), rain);
+    alarms A (.state(state), .clk(clk), .reset(reset), .fire(fire), .burglar(burglar), .rain(rain));
 
     initial
     begin

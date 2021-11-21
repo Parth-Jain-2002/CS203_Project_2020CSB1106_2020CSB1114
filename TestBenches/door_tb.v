@@ -34,6 +34,8 @@ ma=1'b1;lock=1'b1;
 $display("time=%d: Magnetic-sensor: %b , Locked:%b , Door-alaram: %b",$time,ma,lock,dalm);
 end
 
+initial #1000 $finish;
+
 initial
 begin
 $dumpfile("test1.vcd");

@@ -1,6 +1,6 @@
 `include "../Smart_home_automation.v"
 
-module WATER_TB ();
+module temp_tb;
     reg [7:0] Temp;
     wire Heat, Cool;
     reg Reset, CLK;
